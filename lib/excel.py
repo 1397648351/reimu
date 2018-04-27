@@ -52,11 +52,10 @@ def write_to_excel(contents, file=config.OUT_FILE):
             sheet = wb.get_sheet(0)
             id = contents['id']
             if not repeat_excel(id, file):
-                if row == 0:
-                    sheet.col(1).width = 20 * 256
-                    sheet.col(2).width = 40 * 256
-                    sheet.col(3).width = 10 * 256
-                    sheet.col(4).width = 30 * 256
+                sheet.col(1).width = 100 * 256
+                sheet.col(2).width = 100 * 256
+                sheet.col(3).width = 15 * 256
+                sheet.col(4).width = 20 * 256
                 sheet.write(row, 0, contents['id'])
                 sheet.write(row, 1, contents['name'])
                 sheet.write(row, 2, contents['html'])
@@ -67,11 +66,7 @@ def write_to_excel(contents, file=config.OUT_FILE):
             else:
                 print u'内容已存在, 跳过写入文件', file
         except IOError:
-            print u'未找到该文件', file
-            book = xlwt.Workbook(encoding='utf-8', style_compression=0)
-            book.add_sheet('reimu', cell_overwrite_ok=True)
-            book.save(file)
-            print u'已成功创建该文件', file
+            new_excel(file)
             write_to_excel(contents, file)
 
 

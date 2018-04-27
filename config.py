@@ -14,7 +14,7 @@ OUT_FILE = 'file/reimu.xls'
 EXCEL = 0
 SQL = 1
 EXCELANDSQL = 2
-OUT_TYPE = SQL
+OUT_TYPE = EXCEL
 
 DB = {
     "host": "127.0.0.1",
