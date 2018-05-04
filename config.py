@@ -5,16 +5,17 @@
 
 # DRIVER = webdriver.Firefox()
 TIMEOUT = 30
-SEARCH_LINK = "https://blog.reimu.net/"
+#SEARCH_LINK = "https://blog.reimu.net/"
+SEARCH_LINK = "https://blog.reimu.net/archives/category/anime/"
 PAGE = 1
-PAGE_COUNT = 50
+PAGE_COUNT = 89
 CONTENT = ''
 OUT_FILE = 'file/reimu.xls'
 
 EXCEL = 0
 SQL = 1
 EXCELANDSQL = 2
-OUT_TYPE = EXCEL
+OUT_TYPE = SQL
 
 DB = {
     "host": "127.0.0.1",
